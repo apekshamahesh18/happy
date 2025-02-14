@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day, My Love!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f0f0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #ff5e5e;
+            font-size: 3rem;
+            font-weight: bold;
+            animation: heart-beat 1.5s infinite;
+        }
+
+        .message {
+            color: #ff3333;
+            font-size: 1.5rem;
+            margin-top: 10px;
+        }
+
+        /* Heart-Shaped Balloons */
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: #ff3366;
+            clip-path: polygon(50% 0%, 0% 50%, 50% 100%, 100% 50%);
+            animation: floatUp 10s ease-in infinite;
+        }
+
+        .balloon:nth-child(odd) {
+            animation-delay: 2s;
+        }
+
+        .balloon:nth-child(even) {
+            animation-delay: 4s;
+        }
+
+        /* Cloud with Heart Puffs */
+        .cloud-container {
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            z-index: -1;
+        }
+
+        .cloud {
+            width: 100px;
+            height: 60px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            animation: cloud-move 15s linear infinite;
+        }
+
+        .cloud::after {
+            content: "";
+            width: 80px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .cloud:nth-child(1) {
+            top: 30px;
+            left: 50px;
+        }
+
+        .cloud:nth-child(2) {
+            top: 100px;
+            left: 200px;
+        }
+
+        .cloud:nth-child(3) {
+            top: 60px;
+            left: 350px;
+        }
+
+        /* Love Letter Scroll */
+        .love-letter {
+            margin-top: 60px;
+            font-size: 1.2rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #800000;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #ff3366;
+            animation: typing 10s steps(50) 1s forwards;
+        }
+
+        /* Cupid and Arrow Animation */
+        .cupid-container {
+            position: absolute;
+            bottom: 10%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            animation: cupidFly 10s infinite;
+        }
+
+        .cupid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background-color: #ff3366;
+            clip-path: circle(50% at 50% 50%);
+            animation: cupidShoot 2s infinite;
+        }
+
+        .arrow {
+            position: absolute;
+            width: 3px;
+            height: 50px;
+            background-color: #ff6600;
+            left: 25px;
+            top: 25px;
+            animation: shootArrow 2s infinite;
+        }
+
+        @keyframes heart-beat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translate(0, 100vh) rotate(0deg);
+            }
+            100% {
+                transform: translate(0, -50vh) rotate(360deg);
+            }
+        }
+
+        @keyframes cloud-move {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes cupidFly {
+            0% {
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                transform: translateX(-200px) translateY(100px);
+            }
+            100% {
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes cupidShoot {
+            0%, 100% {
+                transform: rotate(0);
+            }
+            50% {
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes shootArrow {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(50px);
+            }
+            100% {
+                transform: translateX(100px);
+            }
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #ff6666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>Happy Valentine's Day, My Love!</h1>
+        <p class="message">You mean the world to me. I'm so grateful to have you in my life!</p>
+        <p class="message">You are my everything, my heart, my soul. I love you forever and always!</p>
+    </div>
+
+    <!-- Love Letter Scroll -->
+    <div class="love-letter">
+        Dearest Love, I wanted to tell you just how much you mean to me... I am blessed to have you in my life.
+    </div>
+
+    <!-- Floating Heart Balloons -->
+    <div class="balloon" style="left: 10%; animation-delay: 2s;"></div>
+    <div class="balloon" style="left: 20%; animation-delay: 4s;"></div>
+    <div class="balloon" style="left: 30%; animation-delay: 6s;"></div>
+    <div class="balloon" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="balloon" style="left: 50%; animation-delay: 5s;"></div>
+
+    <!-- Clouds with Heart Puffs -->
+    <div class="cloud-container">
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+    </div>
+
+    <!-- Cupid and Arrow -->
+    <div class="cupid-container">
+        <div class="cupid"></div>
+        <div class="arrow"></div>
+    </div>
+
+    <div class="footer">
+        <p>Created with ❤️ just for you.</p>
+    </div>
+
+</body>
+</html>
